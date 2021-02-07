@@ -12,12 +12,12 @@ class Order < ApplicationRecord
       GROUP BY employee_id
     SQL
 
-    sql =  <<-SQL
+    query =  <<-SQL
       SELECT employee_id, total_earning, RANK () OVER (ORDER BY total_earning DESC) as ranking
       FROM (#{sub_query}) as total_earnings
       LIMIT 10
     SQL
 
-    ActiveRecord::Base.connection.select_all(sql).to_hash
+    find_by_sql(query)
   }
 end

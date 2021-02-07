@@ -141,22 +141,22 @@ ActiveRecord::Base.transaction do
         hired_at: Faker::Date.between(from: '2005-04-01', to: '2018-04-01')
       )
 
-      puts "successed create #{department.name} account"
+      puts "successed create #{department.name} account" if i == 4
 
       # 売り上げデータの作成
-      10.times do |i|
+      30.times do |i|
         i += 1
 
         Order.create!(
           customer_name: Faker::Company.name,
           employee: employee,
           company: company,
-          price: "#{rand(5) + 1}000000".to_i,
+          price: "#{rand(10) + 1}000000".to_i,
           status: Order.statuses.keys.sample,
           ordered_at: Faker::Date.between(from: '2018-07-01', to: '2021-04-01')
         )
 
-        puts "successed create order"
+        puts "successed create order" if i == 30
       end
     end
   end
