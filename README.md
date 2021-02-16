@@ -1,3 +1,10 @@
+|保存場所|実装難度|セキュリティ|備考|
+| --- | --- | --- | --- |
+|LocalStorage|低|XSS脆弱性があった場合にTokenを抜き出すのが容易||
+|Cookie|中|HttpOnlyをTrueにすればJavaScriptでのCookie操作を無効化できるが、XSS脆弱性があった場合、XMLHttpRequestを実行されるとCookieを盗み出される|
+|In-memory|高|攻撃者からすると、認証Tokenがどこに保存されているかわからないため、攻撃が困難|メモリにTokenを保存するためリロードすると再度認証が必要になり、UXが最悪|
+
+
 # README
 
 # Tables
