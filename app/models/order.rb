@@ -1,6 +1,7 @@
 class Order < ApplicationRecord
-  belongs_to :employee
   belongs_to :company
+  belongs_to :employee
+  belongs_to :department
 
   enum status: [:un_official, :fixed]
 

@@ -151,6 +151,7 @@ ActiveRecord::Base.transaction do
           customer_name: Faker::Company.name,
           employee: employee,
           company: company,
+          department: department,
           price: "#{rand(10) + 1}000000".to_i,
           status: Order.statuses.keys.sample,
           ordered_at: Faker::Date.between(from: '2018-07-01', to: '2021-04-01')

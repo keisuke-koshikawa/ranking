@@ -58,9 +58,11 @@ ActiveRecord::Schema.define(version: 2021_02_06_032608) do
     t.date "ordered_at", null: false
     t.bigint "employee_id", null: false
     t.bigint "company_id", null: false
+    t.bigint "department_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_orders_on_company_id"
+    t.index ["department_id"], name: "index_orders_on_department_id"
     t.index ["employee_id"], name: "index_orders_on_employee_id"
   end
 
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_032608) do
   add_foreign_key "employees", "departments"
   add_foreign_key "employees", "positions"
   add_foreign_key "orders", "companies"
+  add_foreign_key "orders", "departments"
   add_foreign_key "orders", "employees"
   add_foreign_key "positions", "companies"
 end
