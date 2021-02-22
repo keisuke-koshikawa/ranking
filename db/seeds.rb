@@ -121,7 +121,6 @@ ActiveRecord::Base.transaction do
         when 4
           position_4
         end
-      gimei = Gimei.name
       sex = [:male, :female].sample
       gimei =
         if sex == :male
