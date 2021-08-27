@@ -3,6 +3,7 @@
 ## Q1. 以下のカラムを持つpostsテーブルを生成するマイグレーションファイルをターミナルから作成してください。
 
 |name|type|option|description|
+| --- | --- | --- | --- |
 |id|bigint||プライマリーキー(主キー)|
 |title|string|null: false, index: true|タイトル|
 |body|text|null: false|本文|
