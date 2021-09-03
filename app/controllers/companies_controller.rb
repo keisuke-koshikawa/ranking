@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
   def show
-    @compan = Company.find(params[:id])
+    @company = Company.find(params[:id])
   end
 end
