@@ -4,5 +4,8 @@ Rails.application.routes.draw do
     resources :companies do
       resources :companies
     end
+    resources :employees do
+      resources :employees
+    end
   end
 end
